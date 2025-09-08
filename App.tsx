@@ -7,7 +7,8 @@ export default function App() {
   let feedback ='';
   const LicenseYears = 5;
 
-  if (age >= 18) 
+  if (age >= 18)
+    /*the condition age >=18 was true*/
     if (LicenseYears >= 3)
       {
         feedback='you are a qualified , safe drive.👌'
@@ -19,6 +20,40 @@ export default function App() {
           {
           feedback = 'You are not allowed to drive yet😩'
          }
+
+
+// adding a swicth statement
+let drivingRank='';
+switch(LicenseYears) {
+
+    case 0: 
+     drivingRank='newbie driver';
+     break;
+     
+    case 1:
+      drivingRank ='Rookie with 1 year of driving experience';''
+    break;
+    
+    case 2:
+      drivingRank ='Rookie with 1 year of driving experience';
+    break,
+    
+     case 3:
+     case 4:
+      drivingRank ='Experienced driver';
+      break;
+      default:
+        drivingRank = 'veteran driver with many years experience';
+
+
+
+
+
+} 
+  
+
+
+
   
   return (
     <SafeAreaView style= {styles.container}> 
@@ -37,6 +72,11 @@ export default function App() {
        <Text style ={styles.Response}>LicenseYears {LicenseYears}</Text>
     <Text style ={[styles.Response ,{fontSize:48,color:'black', marginBottom:35, textAlign:'center'}]}>
       {feedback} {/* This is my message to be displayed to the user */}
+     
+      </Text>
+
+      <Text style ={[styles.Response ,{fontSize:48,color:'black', marginBottom:35, textAlign:'center'}]}> Driving Rank 
+      {drivingRank} {/* This is the driving Text compnents */}
      
       </Text>
      
